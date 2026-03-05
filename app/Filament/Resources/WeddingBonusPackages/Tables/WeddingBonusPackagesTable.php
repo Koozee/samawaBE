@@ -17,12 +17,17 @@ class WeddingBonusPackagesTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('weddingPackage.name')
                     ->label('Nama Paket')
                     ->default('—')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('price')
+                TextColumn::make('bonusPackage.name')
+                    ->label('Nama Bonus')
+                    ->default('—')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('weddingPackage.price')
                     ->label('Harga')
                     ->default('—')
                     ->searchable()

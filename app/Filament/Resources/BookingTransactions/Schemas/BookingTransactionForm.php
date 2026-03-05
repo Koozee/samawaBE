@@ -32,9 +32,11 @@ class BookingTransactionForm
                                 ->live()
                                 ->afterStateUpdated(function ($state, Set $set) {
                                     $weddingPackage = WeddingPackage::find($state);
+                                    $tax = 0.11;
                                     if ($weddingPackage) {
                                         $set('price', $weddingPackage->price);
                                         $set('total_amount', $weddingPackage->price);
+                                        $set('total_tax_amount', $weddingPackage->price * $tax);
                                     }
                                 }),
 
@@ -53,6 +55,7 @@ class BookingTransactionForm
                             TextInput::make('total_tax_amount')
                                 ->label('Pajak')
                                 ->numeric()
+                                ->readOnly()
                                 ->prefix('IDR')
                                 ->default(0),
                         ]),

@@ -17,6 +17,6 @@ class WeddingPhoto extends Model
 
     public function weddingPackage()
     {
-        return $this->belongsTo(WeddingPackage::class);
+        return $this->belongsTo(WeddingPackage::class, 'wedding_package_id');
     }
 }

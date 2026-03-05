@@ -18,7 +18,7 @@ class WeddingPhotosTable
     {
         return $table
             ->columns([
-                TextColumn::make('wedding_package_id')
+                TextColumn::make('weddingPackage.name')
                     ->label('Paket'),
                 ImageColumn::make('photo')
                     ->label('Foto'),
